@@ -22,5 +22,17 @@ public class Main {
 
         DubboService dubboService = referenceConfig.get();
         System.out.println(dubboService.echo("Hello World!"));
+
+        ReferenceConfig<DubboService> referenceConfig2 = new ReferenceConfig<>();
+        referenceConfig2.setApplication(applicationConfig);
+        referenceConfig2.setRegistry(registryConfig);
+        referenceConfig2.setInterface(DubboService.class);
+        referenceConfig2.setGroup("dubbo-x");
+        referenceConfig2.setVersion("0.0.2");
+
+        DubboService dubboService2 = referenceConfig2.get();
+        for (int i = 0; i < 20; i++) {
+            System.out.println(dubboService2.echo("Hello World!"));
+        }
     }
 }

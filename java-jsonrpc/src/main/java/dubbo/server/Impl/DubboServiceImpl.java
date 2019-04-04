@@ -1,4 +1,4 @@
-package dubbo.server;
+package dubbo.server.Impl;
 
 import dubbo.DubboService;
 
