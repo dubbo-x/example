@@ -21,7 +21,7 @@ public class Main {
         referenceConfig.setVersion("0.0.1");
 
         DubboService dubboService = referenceConfig.get();
-        System.out.println(dubboService.echo("Hello World!"));
+        System.out.println(dubboService.echo("Hello World!"));  // bug: route to protocol = jsonrpc, port = 12346, interface = dubbo.DubboService, group = dubbo-x, version = 0.0.2
 
         ReferenceConfig<DubboService> referenceConfig2 = new ReferenceConfig<>();
         referenceConfig2.setApplication(applicationConfig);
@@ -29,6 +29,7 @@ public class Main {
         referenceConfig2.setInterface(DubboService.class);
         referenceConfig2.setGroup("dubbo-x");
         referenceConfig2.setVersion("0.0.2");
+//        referenceConfig2.setProtocol("jsonrpc");
 
         DubboService dubboService2 = referenceConfig2.get();
         for (int i = 0; i < 20; i++) {
