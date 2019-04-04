@@ -1,8 +1,7 @@
-package dubbo;
+package dubbo.server;
 
-import com.alibaba.dubbo.config.annotation.Service;
+import dubbo.DubboService;
 
-@Service
 public class DubboServiceImpl implements DubboService {
 
     @Override
